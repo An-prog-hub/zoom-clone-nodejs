@@ -6,7 +6,7 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
     path: "/peerjs",
     host: '/',
-    port: '3030'
+    port: '443'
 });
 
 let myVideoStream
@@ -38,8 +38,8 @@ navigator.mediaDevices.getUserMedia({
         })
 
         socket.on('createMessage', message => {
-         
-            $('ul').append(`<li class="message"><br>user</br>${message}</li>`)
+
+            $('ul').append(`<li class="message"><br>user : </br>${message}</li>`)
             scrollToBottom()
         })
         } )
@@ -135,6 +135,8 @@ const muteUnmute = () => {
    
   function close_window() {
     if (confirm("Are You Sure to leave this meeting ?")) {
-      close();
+      window.close();
     }
   }
+
+
